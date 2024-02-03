@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots" content="noindex, nofollow">
+<meta content="telephone=no" name="format-detection" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<title>短链接</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script src="jquery-1.5.1.min.js"></script>
+</head>
+<body>
+<div class="block">
+	<div class="mod">
+		<h1 class="modTitle">
+			<div class="nav">
+				短链接-dongua
+			</div>
+		</h1>
+		<div class="cat-content">
+			<input type="text" id="url" style="width:100%" placeholder="请输入URL">
+			<button onclick="getShortLink()">开始生成</button>
+			<div id="shortlink" class="modTitle"></div>
+		</div>
+	</div>
+<div style="text-align:center; margin-top:20px;">
+    <a href="https://github.com/ltsyydswow/ShortLink_dg" target="_blank">GitHub</a>
+</div>
+</div>
+<script>
+	function getShortLink(){
+		$.get('./app.php?url='+$('#url').val(),function(ret){
+			$('#shortlink').html('<a href="'+ret+'" target="_blank">'+ret+'</a>');
+		});
+
+	}
+</script>
+</body>
+</html>
